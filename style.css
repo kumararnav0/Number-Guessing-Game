@@ -1,0 +1,83 @@
+/* Base styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: #333;
+}
+
+/* Container styles */
+.container {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+}
+
+/* Header styles */
+h1 {
+    font-size: 24px;
+    margin-bottom: 1rem;
+    color: #4CAF50;
+}
+
+/* Paragraph styles */
+p {
+    font-size: 16px;
+    margin-bottom: 1rem;
+}
+
+/* Form styles */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="radio"] {
+    margin: 0.5rem;
+}
+
+label {
+    font-size: 16px;
+    margin-bottom: 0.5rem;
+}
+
+/* Button styles */
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Input styles */
+input[type="number"] {
+    padding: 10px;
+    width: 80px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+/* Message styles */
+.message {
+    font-size: 16px;
+    margin-bottom: 1rem;
+    color: #d9534f; /* Red color for error messages */
+}
