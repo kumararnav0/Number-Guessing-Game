@@ -5,46 +5,50 @@ class NumberGuessingGame:
     def __init__(self, root):
         self.root = root
         self.root.title("Number Guessing Game")
-        
+        self.root.configure(bg='#f0f0f0')  # Set background color
+
         self.number = random.randint(1, 100)
         self.attempts = 0
         self.max_attempts = 10
-        
+
         self.create_widgets()
         self.set_difficulty("easy")
+        
+        # Bind the Enter key to the make_guess method
+        self.root.bind('<Return>', self.make_guess_event)
 
     def create_widgets(self):
-        self.title_label = tk.Label(self.root, text="Welcome to the Number Guessing Game!", font=("Helvetica", 16))
+        self.title_label = tk.Label(self.root, text="Welcome to the Number Guessing Game!", font=("Helvetica", 16, 'bold'), bg='#f0f0f0', fg='#333333')
         self.title_label.pack(pady=10)
         
-        self.instructions_label = tk.Label(self.root, text="Think of a number between 1 and 100.", font=("Helvetica", 12))
+        self.instructions_label = tk.Label(self.root, text="I'm thinking of a number between 1 and 100.", font=("Helvetica", 12), bg='#f0f0f0', fg='#333333')
         self.instructions_label.pack(pady=5)
         
-        self.difficulty_label = tk.Label(self.root, text="Choose a difficulty:", font=("Helvetica", 12))
+        self.difficulty_label = tk.Label(self.root, text="Choose a difficulty:", font=("Helvetica", 12), bg='#f0f0f0', fg='#333333')
         self.difficulty_label.pack(pady=5)
         
-        self.easy_button = tk.Button(self.root, text="Easy", command=lambda: self.set_difficulty("easy"))
+        self.easy_button = tk.Button(self.root, text="Easy", command=lambda: self.set_difficulty("easy"), bg='#4CAF50', fg='white', font=("Helvetica", 10, 'bold'), bd=0, padx=10, pady=5)
         self.easy_button.pack(pady=2)
         
-        self.hard_button = tk.Button(self.root, text="Hard", command=lambda: self.set_difficulty("hard"))
+        self.hard_button = tk.Button(self.root, text="Hard", command=lambda: self.set_difficulty("hard"), bg='#F44336', fg='white', font=("Helvetica", 10, 'bold'), bd=0, padx=10, pady=5)
         self.hard_button.pack(pady=2)
         
-        self.guess_label = tk.Label(self.root, text="Take a wild guess:", font=("Helvetica", 12))
+        self.guess_label = tk.Label(self.root, text="Take a wild guess:", font=("Helvetica", 12), bg='#f0f0f0', fg='#333333')
         self.guess_label.pack(pady=5)
         
-        self.guess_entry = tk.Entry(self.root, font=("Helvetica", 12))
+        self.guess_entry = tk.Entry(self.root, font=("Helvetica", 12), bd=2, relief="solid")
         self.guess_entry.pack(pady=5)
         
-        self.guess_button = tk.Button(self.root, text="Guess", command=self.make_guess)
+        self.guess_button = tk.Button(self.root, text="Guess", command=self.make_guess, bg='#008CBA', fg='white', font=("Helvetica", 10, 'bold'), bd=0, padx=10, pady=5)
         self.guess_button.pack(pady=5)
         
-        self.hint_label = tk.Label(self.root, text="", font=("Helvetica", 12))
+        self.hint_label = tk.Label(self.root, text="", font=("Helvetica", 12, 'italic'), bg='#f0f0f0', fg='#FF5722')
         self.hint_label.pack(pady=5)
         
-        self.attempts_label = tk.Label(self.root, text="", font=("Helvetica", 12))
+        self.attempts_label = tk.Label(self.root, text="", font=("Helvetica", 12), bg='#f0f0f0', fg='#333333')
         self.attempts_label.pack(pady=5)
         
-        self.replay_button = tk.Button(self.root, text="Play Again", command=self.play_again)
+        self.replay_button = tk.Button(self.root, text="Play Again", command=self.play_again, bg='#FFC107', fg='#333333', font=("Helvetica", 10, 'bold'), bd=0, padx=10, pady=5)
         self.replay_button.pack(pady=5)
         self.replay_button.config(state=tk.DISABLED)
         
@@ -58,6 +62,9 @@ class NumberGuessingGame:
         self.guess_entry.config(state=tk.NORMAL)
         self.guess_button.config(state=tk.NORMAL)
         self.replay_button.config(state=tk.DISABLED)
+
+    def make_guess_event(self, event):
+        self.make_guess()
 
     def make_guess(self):
         try:
