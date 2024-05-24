@@ -1,7 +1,7 @@
 /* Base styles */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f9f9f9;
+    background-color: #f0f4f8;
     margin: 0;
     padding: 0;
     display: flex;
@@ -16,23 +16,30 @@ body {
 .container {
     background: #fff;
     padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 300px;
+    width: 320px;
+    max-width: 90%;
+    transition: all 0.3s ease-in-out;
+}
+
+.container:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
 /* Header styles */
 h1 {
-    font-size: 24px;
-    margin-bottom: 1rem;
+    font-size: 26px;
+    margin-bottom: 1.5rem;
     color: #4CAF50;
 }
 
 /* Paragraph styles */
 p {
-    font-size: 16px;
-    margin-bottom: 1rem;
+    font-size: 18px;
+    margin-bottom: 1.2rem;
+    color: #555;
 }
 
 /* Form styles */
@@ -47,37 +54,50 @@ input[type="radio"] {
 }
 
 label {
-    font-size: 16px;
+    font-size: 18px;
     margin-bottom: 0.5rem;
+    color: #666;
 }
 
 /* Button styles */
 button {
-    padding: 10px 20px;
+    padding: 12px 24px;
     background-color: #4CAF50;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 button:hover {
     background-color: #45a049;
+    transform: scale(1.05);
 }
 
 /* Input styles */
 input[type="number"] {
-    padding: 10px;
-    width: 80px;
+    padding: 12px;
+    width: 100px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 6px;
     margin-bottom: 1rem;
+    font-size: 16px;
+    text-align: center;
 }
 
 /* Message styles */
 .message {
-    font-size: 16px;
-    margin-bottom: 1rem;
+    font-size: 18px;
+    margin-bottom: 1.5rem;
     color: #d9534f; /* Red color for error messages */
+}
+
+/* Footer styles */
+footer {
+    margin-top: 2rem;
+    font-size: 14px;
+    color: #888;
 }
