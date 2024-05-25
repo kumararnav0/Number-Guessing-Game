@@ -40,7 +40,7 @@ def give_hint(guess, number):
 
 def play_game():
     print("Welcome to the Number Guessing Game!")
-    print("I'm thinking of a number between 1 and 100.")
+    print("Think of a number between 1 and 100.")
     number = random.randint(1, 100)
     difficulty = get_difficulty()
 
